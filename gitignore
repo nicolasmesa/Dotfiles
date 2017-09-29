@@ -1,0 +1,47 @@
+# Compiled source #
+###################
+*.class
+*.com
+*.dll
+*.ear
+*.exe
+*.o
+*.pyc
+*.pyo
+*.so
+*.war
+ 
+# Temporary files #
+###################
+*.bak
+*.swo
+*.swp
+*~
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.Trashes
+
+# IDE generated files #
+#######################
+.~lock.*
+.buildpath
+.classpath
+eclipse-bin
+.idea
+*.iml
+nbproject
+.project
+.settings
+composer.lock
+
+# Build files #
+###############
+build
+bin
+
+# SASS #
+########
+.sass-cache
