@@ -1,3 +1,6 @@
 #! /bin/bash
-ln -sf ~/.tmux.conf ./.tmux.conf
-git config --global core.excludesfile ./gitignore
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+ln -sf "$DIR/.tmux.conf" ~/.tmux.conf
+ln -sf "$DIR/gitignore" ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
