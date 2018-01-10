@@ -6,6 +6,27 @@ autocmd! bufwritepost .vimrc source %
 "Rebind <Leader>
 let mapleader = ","
 
+map <silent> <C-h> :call WinMove('h')<cr>
+map <silent> <C-j> :call WinMove('j')<cr>
+map <silent> <C-k> :call WinMove('k')<cr>
+map <silent> <C-l> :call WinMove('l')<cr>
+map <silent> <C-x> :q<cr>
+
+" Move to the window in the direction specified or open a new one
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
+
+
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
