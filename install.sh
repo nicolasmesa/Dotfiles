@@ -1,11 +1,11 @@
 #! /bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -sf "$DIR/.tmux.conf" ~/.tmux.conf
-ln -sf "$DIR/gitignore" ~/.gitignore
-ln -sf "$DIR/.vim" ~/.vim
-ln -sf "$DIR/.vimrc" ~/.vimrc
-ln -sf "$DIR/.bash_functions" ~/.bash_functions
+ln -sfn "$DIR/.tmux.conf" ~/.tmux.conf
+ln -sfn "$DIR/gitignore" ~/.gitignore
+ln -sfn "$DIR/.vim" ~/.vim
+ln -sfn "$DIR/.vimrc" ~/.vimrc
+ln -sfn "$DIR/.bash_functions" ~/.bash_functions
 
 git config --global core.excludesfile ~/.gitignore
 
