@@ -1,16 +1,14 @@
-# Get short hash of current directory path (for disambiguation)
+# Get directory name with short hash for uniqueness (e.g., myproject-a3f2c1)
 pwdhash() {
-    echo -n "$PWD" | md5sum | cut -c1-6
+    local dir_name=$(basename "$PWD")
+    local hash=$(echo -n "$PWD" | md5sum | cut -c1-6)
+    echo "${dir_name}-${hash}"
 }
 
 # Create/attach tmux session named after current directory
 tdefault() {
-    local dir_name=$(basename "$PWD")
-    local hash=$(pwdhash)
-    local session_name="${dir_name}-${hash}"
-
     # Sanitize: replace invalid tmux session name chars
-    session_name=$(echo "$session_name" | tr './:' '_')
+    local session_name=$(pwdhash | tr './:' '_')
 
     if tmux has-session -t "$session_name" 2>/dev/null; then
         tmux attach-session -t "$session_name"
