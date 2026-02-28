@@ -40,8 +40,9 @@ composer.lock
 # Build files #
 ###############
 build
-bin
 
 # SASS #
 ########
 .sass-cache
+
+settings.local.json
